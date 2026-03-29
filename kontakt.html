@@ -10,25 +10,27 @@
 
     <h1>Kontakt</h1>
 
-    <form id="formularz">
+    <form action="https://formspree.io/f/mjgpzyjz" method="POST">
 
-        <p>Imię:</p>
-        <input type="text" id="imie" required>
 
-        <p>Nazwisko:</p>
-        <input type="text" id="nazwisko" required>
+<p>Imię:</p>
+<input type="text" id="imie" name="imie" required>
 
-        <p>Email:</p>
-        <input type="email" id="email" required>
+<p>Nazwisko:</p>
+<input type="text" id="nazwisko" name="nazwisko" required>
 
-        <p>Telefon:</p>
-        <input type="tel" id="telefon" required>
+<p>Email:</p>
+<input type="email" id="email" name="email" required>
 
-        <p>Treść zlecenia:</p>
-        <textarea id="tresc" required></textarea>
+<p>Telefon:</p>
+<input type="tel" id="telefon" name="telefon" required>
 
-        <p>Oferta finansowa (PLN):</p>
-        <input type="number" id="oferta" required>
+<p>Treść zlecenia:</p>
+<textarea id="tresc" name="tresc" required></textarea>
+
+<p>Oferta finansowa (PLN):</p>
+<input type="number" id="oferta" name="oferta" required>
+
 
         <br><br>
         <button type="submit">Wyślij</button>
@@ -37,26 +39,6 @@
 
     <p><a href="index.html">Powrót do CV</a></p>
 
-    <script>
-        document.getElementById("formularz").addEventListener("submit", function(e) {
-            e.preventDefault();
-
-            let imie = document.getElementById("imie").value;
-            let oferta = document.getElementById("oferta").value;
-
-            if (imie.length < 4) {
-                alert("Imię musi mieć minimum 4 znaki!");
-                return;
-            }
-
-            if (oferta < 1) {
-                alert("Oferta nie może być mniejsza niż 1 PLN!");
-                return;
-            }
-
-            alert("Formularz wysłany poprawnie 🚀");
-        });
-    </script>
 
 </body>
 </html>
