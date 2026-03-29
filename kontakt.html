@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <meta name="author" content="75555">
+</head>
+<body>
+
+    <h1>Kontakt</h1>
+
+    <form id="formularz">
+
+        <p>Imię:</p>
+        <input type="text" id="imie" required>
+
+        <p>Nazwisko:</p>
+        <input type="text" id="nazwisko" required>
+
+        <p>Email:</p>
+        <input type="email" id="email" required>
+
+        <p>Telefon:</p>
+        <input type="tel" id="telefon" required>
+
+        <p>Treść zlecenia:</p>
+        <textarea id="tresc" required></textarea>
+
+        <p>Oferta finansowa (PLN):</p>
+        <input type="number" id="oferta" required>
+
+        <br><br>
+        <button type="submit">Wyślij</button>
+
+    </form>
+
+    <p><a href="75555_cv.html">Powrót do CV</a></p>
+
+    <script>
+        document.getElementById("formularz").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let imie = document.getElementById("imie").value;
+            let oferta = document.getElementById("oferta").value;
+
+            if (imie.length < 4) {
+                alert("Imię musi mieć minimum 4 znaki!");
+                return;
+            }
+
+            if (oferta < 1) {
+                alert("Oferta nie może być mniejsza niż 1 PLN!");
+                return;
+            }
+
+            alert("Formularz wysłany poprawnie 🚀");
+        });
+    </script>
+
+</body>
+</html>
